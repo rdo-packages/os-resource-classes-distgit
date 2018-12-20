@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ad32947_9ff75ff5",
+        "filename": "python-os-resource-classes.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2018-12-20T17:10:45Z",
+      "side": 1,
+      "message": "sphinx-build-%{pyver}",
+      "range": {
+        "startLine": 106,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 12
+      },
+      "revId": "672b0bae52f37230e6859d555e96f35f6f437e5b",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
