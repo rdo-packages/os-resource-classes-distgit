@@ -113,7 +113,6 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 # overwritten with every setup.py install.
 %{pyver_install}
 
-
 %check
 %{pyver_bin} setup.py test
 
