@@ -84,7 +84,6 @@ This package contains tests for python os-resource-classes library.
 Summary:        os-resource-classes documentation
 
 BuildRequires:  python%{pyver}-sphinx
-BuildRequires:  python%{pyver}-oslo-sphinx
 BuildRequires:  python%{pyver}-openstackdocstheme
 
 %description -n python-%{sname}-doc
