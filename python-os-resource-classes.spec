@@ -1,14 +1,3 @@
-# Macros for py2/py3 compatibility
-%if 0%{?fedora} || 0%{?rhel} > 7
-%global pyver %{python3_pkgversion}
-%else
-%global pyver 2
-%endif
-%global pyver_bin python%{pyver}
-%global pyver_sitelib %python%{pyver}_sitelib
-%global pyver_install %py%{pyver}_install
-%global pyver_build %py%{pyver}_build
-# End of macros for py2/py3 compatibility
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global with_doc 1
 
@@ -46,45 +35,45 @@ BuildRequires:  openstack-macros
 %description
 %{common_desc}
 
-%package -n     python%{pyver}-%{sname}
+%package -n     python3-%{sname}
 Summary:        %{summary}
-%{?python_provide:%python_provide python%{pyver}-%{sname}}
+%{?python_provide:%python_provide python3-%{sname}}
 
-Requires:       python%{pyver}-pbr >= 2.0
+Requires:       python3-pbr >= 2.0
 
-BuildRequires:  python%{pyver}-devel
-BuildRequires:  python%{pyver}-pbr
-BuildRequires:  python%{pyver}-setuptools
+BuildRequires:  python3-devel
+BuildRequires:  python3-pbr
+BuildRequires:  python3-setuptools
 
-%description -n python%{pyver}-%{sname}
+%description -n python3-%{sname}
 %{common_desc}
 
-%package -n     python%{pyver}-%{sname}-tests
+%package -n     python3-%{sname}-tests
 Summary:        %{summary}
 
 # Required for the test suite
-BuildRequires:  python%{pyver}-coverage
-BuildRequires:  python%{pyver}-subunit
-BuildRequires:  python%{pyver}-oslotest
-BuildRequires:  python%{pyver}-testtools
-BuildRequires:  python%{pyver}-stestr
+BuildRequires:  python3-coverage
+BuildRequires:  python3-subunit
+BuildRequires:  python3-oslotest
+BuildRequires:  python3-testtools
+BuildRequires:  python3-stestr
 
-Requires:       python%{pyver}-coverage >= 4.0
-Requires:       python%{pyver}-%{sname} = %{version}-%{release}
-Requires:       python%{pyver}-subunit
-Requires:       python%{pyver}-oslotest
-Requires:       python%{pyver}-testtools
-Requires:       python%{pyver}-stestr
+Requires:       python3-coverage >= 4.0
+Requires:       python3-%{sname} = %{version}-%{release}
+Requires:       python3-subunit
+Requires:       python3-oslotest
+Requires:       python3-testtools
+Requires:       python3-stestr
 
-%description -n python%{pyver}-%{sname}-tests
+%description -n python3-%{sname}-tests
 This package contains tests for python os-resource-classes library.
 
 %if 0%{?with_doc}
 %package -n python-%{sname}-doc
 Summary:        os-resource-classes documentation
 
-BuildRequires:  python%{pyver}-sphinx
-BuildRequires:  python%{pyver}-openstackdocstheme
+BuildRequires:  python3-sphinx
+BuildRequires:  python3-openstackdocstheme
 
 %description -n python-%{sname}-doc
 Documentation for os-resource-classes
@@ -98,11 +87,11 @@ rm -rf %{pypi_name}.egg-info
 %py_req_cleanup
 
 %build
-%{pyver_build}
+%{py3_build}
 
 %if 0%{?with_doc}
 # generate html docs
-sphinx-build-%{pyver} -W -b html doc/source doc/build/html
+sphinx-build-3 -W -b html doc/source doc/build/html
 # remove the sphinx build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
@@ -110,20 +99,20 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %install
 # Must do the subpackages' install first because the scripts in /usr/bin are
 # overwritten with every setup.py install.
-%{pyver_install}
+%{py3_install}
 
 %check
-%{pyver_bin} setup.py test
+%{__python3} setup.py test
 
-%files -n python%{pyver}-%{sname}
+%files -n python3-%{sname}
 %license LICENSE
 %doc README.rst
-%{pyver_sitelib}/%{pypi_name}
-%{pyver_sitelib}/%{pypi_name}-%{upstream_version}-py?.?.egg-info
-%exclude %{pyver_sitelib}/%{pypi_name}/tests
+%{python3_sitelib}/%{pypi_name}
+%{python3_sitelib}/%{pypi_name}-%{upstream_version}-py?.?.egg-info
+%exclude %{python3_sitelib}/%{pypi_name}/tests
 
-%files -n python%{pyver}-%{sname}-tests
-%{pyver_sitelib}/%{pypi_name}/tests
+%files -n python3-%{sname}-tests
+%{python3_sitelib}/%{pypi_name}/tests
 
 %if 0%{?with_doc}
 %files -n python-%{sname}-doc
