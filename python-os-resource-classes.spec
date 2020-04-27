@@ -20,8 +20,8 @@ provides a way to create these. A custom resource class always begins with a\
 CUSTOM_ prefix.
 
 Name:           python-%{sname}
-Version:        XXX
-Release:        XXX
+Version:        1.0.0
+Release:        1%{?dist}
 Summary:        A library containing standardized resource class names in the Placement service.
 
 License:        ASL 2.0
@@ -121,3 +121,6 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %changelog
+* Mon Apr 27 2020 RDO <dev@lists.rdoproject.org> 1.0.0-1
+- Update to 1.0.0
+
