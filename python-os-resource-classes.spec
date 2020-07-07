@@ -108,7 +108,7 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %license LICENSE
 %doc README.rst
 %{python3_sitelib}/%{pypi_name}
-%{python3_sitelib}/%{pypi_name}-%{upstream_version}-py?.?.egg-info
+%{python3_sitelib}/%{pypi_name}-%{upstream_version}-py%{python3_version}.egg-info
 %exclude %{python3_sitelib}/%{pypi_name}/tests
 
 %files -n python3-%{sname}-tests
