@@ -1,0 +1,9 @@
+Code-Review+2: Alfredo Moralejo <amoralej@redhat.com>
+Code-Review+2: Karolina Kula <kkula@redhat.com>
+Workflow+1: Karolina Kula <kkula@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Wed, 28 Jun 2023 09:40:46 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/os-resource-classes-distgit/+/49054
+Project: openstack/os-resource-classes-distgit
+Branch: refs/heads/rpm-master
