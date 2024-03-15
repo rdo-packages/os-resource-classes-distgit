@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0x4c29ff0e437f3351fd82bdf47c5a3bc787dc7035
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 # we are excluding some BRs from automatic generator
 %global excluded_brs doc8 bandit pre-commit hacking flake8-import-order
@@ -24,8 +24,8 @@ provides a way to create these. A custom resource class always begins with a\
 CUSTOM_ prefix.
 
 Name:           python-%{sname}
-Version:        XXX
-Release:        XXX
+Version:        1.1.0
+Release:        2%{?dist}
 Summary:        A library containing standardized resource class names in the Placement service.
 
 License:        Apache-2.0
@@ -143,3 +143,6 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %changelog
+* Fri Mar 15 2024 RDO <dev@lists.rdoproject.org> 1.1.0-2
+- Rebuild 1.1.0 in Caracal
+
