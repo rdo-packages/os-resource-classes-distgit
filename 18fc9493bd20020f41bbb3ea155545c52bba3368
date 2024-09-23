@@ -1,0 +1,8 @@
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Code-Review+2: Joel Capitao <jcapitao@redhat.com>
+Workflow+1: Joel Capitao <jcapitao@redhat.com>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Mon, 23 Sep 2024 08:49:45 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/os-resource-classes-distgit/+/54568
+Project: openstack/os-resource-classes-distgit
+Branch: refs/heads/dalmatian-rdo
